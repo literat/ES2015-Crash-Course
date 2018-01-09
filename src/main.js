@@ -1,25 +1,9 @@
-class TaskCollection {
-  constructor(tasks = []) {
-    this.tasks = tasks;
-  }
-
-  prepare() {
-    this.tasks.forEach(task => task.toGulp());
-  }
+function defaultDiscountRate() {
+    return .10;
 }
 
-class Task {
-    toGulp() {
-        console.log('converting to gulp');
-    }
+function applyDiscount(cost, discount = defaultDiscountRate()) { // 100, .10
+    return cost - (cost * discount);
 }
 
-new TaskCollection([
-    new Task, new Task, new Task
-]).prepare();
-
-let names = ['Taylor', 'Jeffrey', 'Adam', 'Matt'];
-
-names = names.map(name => `${name} is cool.`);
-
-console.log(names);
+alert(applyDiscount(100));
