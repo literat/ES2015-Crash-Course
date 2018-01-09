@@ -1,9 +1,16 @@
-function defaultDiscountRate() {
-    return .10;
+function sum(...numbers) {
+    /*return numbers.reduce(function (prev, current) {
+        return prev + current;
+    })*/
+
+    return numbers.reduce((prev, current) => prev + current);
 }
 
-function applyDiscount(cost, discount = defaultDiscountRate()) { // 100, .10
-    return cost - (cost * discount);
+console.log(sum(1, 2, 3, 4, 5));
+
+function sum2(x, y) {
+    return x + y;
 }
 
-alert(applyDiscount(100));
+let nums = [1, 2]
+console.log(sum(...nums));
