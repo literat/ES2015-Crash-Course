@@ -1,7 +1,14 @@
-let name = 'Foo';
-let template = `<div class"Alert">,
-        <p>${name}</p>,
-    </div>
-`;
+function getPerson() {
+    let name = 'John';
+    let age = 25;
 
-console.log(template);
+    return {
+        name,
+        age,
+        greet() {
+            return `Hello, ${this.name}`
+        }
+    }
+}
+
+alert(getPerson().greet());
