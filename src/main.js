@@ -1,14 +1,19 @@
-function getPerson() {
-    let name = 'John';
-    let age = 25;
-
-    return {
-        name,
-        age,
-        greet() {
-            return `Hello, ${this.name}`
-        }
-    }
+function getData({ result, count }) {
+    console.log(result, count);
 }
 
-alert(getPerson().greet());
+getData({
+    name: 'Karen',
+    age: 32,
+    result: ['foo', 'bar'],
+    count: 50
+});
+
+function greet({ name, age }) {
+    console.log(`Hello, ${name}. You are ${age}.`);
+}
+
+greet({
+    name: 'Luke',
+    age: 24
+});
