@@ -1,19 +1,37 @@
-function getData({ result, count }) {
-    console.log(result, count);
+class User {
+    constructor(username, email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    static register(...args) {
+        return new User(...args);
+    }
+
+    get foo() {
+        return 'foo';
+    }
+
+    changeEmail(newEmail) {
+        this.email = newEmail;
+    }
 }
 
-getData({
-    name: 'Karen',
-    age: 32,
-    result: ['foo', 'bar'],
-    count: 50
-});
+let user = User.register('JeffreyWay', 'support@laracasts.com');
 
-function greet({ name, age }) {
-    console.log(`Hello, ${name}. You are ${age}.`);
+user.changeEmail('foo@example.com');
+
+console.dir(user);
+console.log(user.foo);
+
+function log(strategy) {
+    strategy.handle();
 }
 
-greet({
-    name: 'Luke',
-    age: 24
-});
+class ConsoleLogger{
+    handle() {
+        console.log('Using the console strategy to log.');
+    }
+}
+
+log(new ConsoleLogger());
