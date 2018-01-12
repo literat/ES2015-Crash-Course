@@ -1,37 +1,9 @@
-class User {
-    constructor(username, email) {
-        this.username = username;
-        this.email = email;
-    }
+import TaskCollection, {foo} from "./TaskCollection";
 
-    static register(...args) {
-        return new User(...args);
-    }
+console.log(foo);
 
-    get foo() {
-        return 'foo';
-    }
-
-    changeEmail(newEmail) {
-        this.email = newEmail;
-    }
-}
-
-let user = User.register('JeffreyWay', 'support@laracasts.com');
-
-user.changeEmail('foo@example.com');
-
-console.dir(user);
-console.log(user.foo);
-
-function log(strategy) {
-    strategy.handle();
-}
-
-class ConsoleLogger{
-    handle() {
-        console.log('Using the console strategy to log.');
-    }
-}
-
-log(new ConsoleLogger());
+new TaskCollection([
+    'Go to the store',
+    'Finish screencast',
+    'Eat cake'
+]).dump();
