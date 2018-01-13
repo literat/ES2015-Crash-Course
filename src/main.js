@@ -1,32 +1,12 @@
-// Generators
+let items = new Set(['one', 'two', 'three']);
 
-function *numbers() {
-    console.log('Begin');
-    yield 1;
-    yield 2;
-    yield 3;
-}
+console.log(items);
 
-console.log(numbers());
+let tags = ['php', 'javascript', 'vue', 'javascript'];
 
-let iterator = numbers();
+let set = new Set(tags);
 
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
+console.log(set);
 
-function *range(start, end) {
-    while (start < end) {
-        yield start;
+// new Set([...set].filter(tag => tag.length === 3))
 
-        start++;
-    }
-}
-
-let rangeIterator = range(1, 5);
-
-for (let i of rangeIterator) console.log(i);
-
-console.log(
-    [...range(1, 5)]
-);
