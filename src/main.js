@@ -1,9 +1,25 @@
-import TaskCollection, {foo} from "./TaskCollection";
+class User {
+    constructor(name, isAdmin) {
+        this.name = name;
+        this.isAdmin = isAdmin;
+    }
+}
 
-console.log(foo);
+let users = [
+    new User('Jeffrey', false),
+    new User('Jane', true),
+    new User('Jack', false)
+];
 
-new TaskCollection([
-    'Go to the store',
-    'Finish screencast',
-    'Eat cake'
-]).dump();
+console.log(
+    users.find(user => user.isAdmin).name
+);
+
+// [].fill();
+// [].keys();
+// [].values();
+// [].entries();
+
+let items = ['jeff', 'jordan', 'way'].entries();
+
+for (let name of items) console.log(name);
