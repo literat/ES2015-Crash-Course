@@ -1,8 +1,11 @@
-import babel from 'rollup-plugin-babel';
+import buble from 'rollup-plugin-buble';
 
 export default {
-    entry: 'src/main.js',
-    dest: 'out/main.js',
+    input: 'src/main.js',
+    output: {
+        file: 'out/main.js',
+        format: 'cjs'
+    },
 
-    plugins: [babel()]
+    plugins: [buble()]
 };
